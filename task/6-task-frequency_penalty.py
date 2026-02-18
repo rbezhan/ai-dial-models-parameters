@@ -11,8 +11,10 @@ from task.app.main import run
 run(
     deployment_name='gpt-4o',
     print_only_content=True,
-    # TODO:
-    #  Use `frequency_penalty` parameter with different range (-2.0 to 2.0).
+    temperature = 0.7,
+    # print_request=False, 
+    frequency_penalty = -2.0,
+    
 )
 
 # Pay attention that when we set for `gpt-4o` frequency_penalty as -2.0 - the request is running too long,

@@ -1,6 +1,6 @@
 import json
 import os
-
+from dotenv import load_dotenv
 import requests
 
 from task.models.message import Message
@@ -12,6 +12,7 @@ class DialClient:
     _api_key: str
 
     def __init__(self, endpoint: str, deployment_name: str):
+        load_dotenv()
         api_key = os.getenv('DIAL_API_KEY', '')
         if not api_key or api_key.strip() == "":
             raise ValueError("API key cannot be null or empty")
